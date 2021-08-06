@@ -23,18 +23,6 @@
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "npm run lint -- --fix",
-      "prettier --write",
-      "npm run test -- --bail --passWithNoTests --findRelatedTests"
-    ]
-  },
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"
